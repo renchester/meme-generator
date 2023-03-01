@@ -5,7 +5,7 @@
   --margin-sides: 40px;
 
   place-self: center;
-  height: 600px;
+  //   height: 600px;
   width: 600px;
   border-radius: var(--border-radius);
 
@@ -23,6 +23,7 @@
 
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 
   &-logo {
     display: flex;
@@ -43,15 +44,22 @@
   }
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: var(--margin-sides);
+  gap: var(--margin-sides);
+}
+
 .form {
-  --input-padding: 5px 12px;
+  --input-padding: 7px 12px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 15px;
 
-  padding: var(--margin-sides);
   font-size: var(--text-sm);
 
   &-input {
@@ -75,7 +83,15 @@
 
 .meme {
   &__wrapper {
-    border: 1px solid red;
-    flex-grow: 1;
+    width: calc(100% - var(--margin-sides) * 2);
+    // max-height: 400px;
+    // height: 288px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
 }
