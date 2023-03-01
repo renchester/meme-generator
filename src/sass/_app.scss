@@ -1,0 +1,82 @@
+@use 'base';
+
+.app {
+  --border-radius: 12px;
+  --margin-sides: 40px;
+
+  place-self: center;
+  height: 600px;
+  width: 600px;
+  border-radius: var(--border-radius);
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+}
+
+.header {
+  background: var(--gradient);
+  height: 100px;
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+  padding-inline: var(--margin-sides);
+
+  display: flex;
+  align-items: center;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &-logo__img {
+    width: 60px;
+  }
+
+  &-logo__title {
+    color: var(--color-text-light);
+    font-family: var(--font-montserrat);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+}
+
+.form {
+  --input-padding: 5px 12px;
+
+  padding: var(--margin-sides);
+
+  &-input__wrapper {
+    display: flex;
+    gap: 20px;
+
+    font-size: var(--text-sm);
+  }
+
+  &-input {
+    width: 50%;
+    padding: var(--input-padding);
+    border: 1px solid #999999;
+    border-radius: 5px;
+  }
+
+  &-input__submit {
+    width: 100%;
+    background: var(--gradient);
+    border-radius: 5px;
+    padding: var(--input-padding);
+    margin-top: 15px;
+    cursor: pointer;
+
+    color: var(--color-text-light);
+  }
+}
+
+.meme {
+  &__wrapper {
+    border: 1px solid red;
+    flex-grow: 1;
+  }
+}

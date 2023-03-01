@@ -1,9 +1,15 @@
-import reactLogo from './assets/react.svg';
+import Header from './components/Header';
+import Form from './components/Form';
+import MemeImage from './components/MemeImage';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App"></div>;
+  return (
+    <div className="app">
+      <Header />
+      <Form />
+      <MemeImage />
+    </div>
+  );
 }
 
 export default App;
