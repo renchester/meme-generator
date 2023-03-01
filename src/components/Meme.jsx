@@ -1,7 +1,7 @@
-function Form() {
+function Meme() {
   return (
-    <form action="" className="form">
-      <fieldset className="form-input__wrapper">
+    <main className="main">
+      <form action="" className="form">
         <input
           type="text"
           className="form-input form-input__top"
@@ -16,12 +16,16 @@ function Form() {
           value="and take my money"
           placeholder="Text on bottom"
         />
-      </fieldset>
-      <button type="submit" className="btn form-input__submit">
-        Get a new meme image 🖼
-      </button>
-    </form>
+
+        <button type="submit" className="btn form-input__submit">
+          Get a new meme image 🖼
+        </button>
+      </form>
+      <section className="meme__wrapper">
+        <span></span>
+      </section>
+    </main>
   );
 }
 
-export default Form;
+export default Meme;

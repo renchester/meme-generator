@@ -46,28 +46,27 @@
 .form {
   --input-padding: 5px 12px;
 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+
   padding: var(--margin-sides);
-
-  &-input__wrapper {
-    display: flex;
-    gap: 20px;
-
-    font-size: var(--text-sm);
-  }
+  font-size: var(--text-sm);
 
   &-input {
-    width: 50%;
+    width: 100%;
     padding: var(--input-padding);
     border: 1px solid #999999;
     border-radius: 5px;
   }
 
   &-input__submit {
+    grid-column: 1 / 3;
     width: 100%;
     background: var(--gradient);
     border-radius: 5px;
     padding: var(--input-padding);
-    margin-top: 15px;
     cursor: pointer;
 
     color: var(--color-text-light);
