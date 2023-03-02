@@ -9,9 +9,28 @@ function Meme() {
   });
 
   useEffect(() => {
-    fetch(`https://api.imgflip.com/get_memes`)
-      .then((res) => res.json())
-      .then((data) => setAllMemes(data.data.memes));
+    // Anonymous async function
+    (async () => {
+      const response = await fetch(`https://api.imgflip.com/get_memes`);
+      const data = await response.json();
+
+      setAllMemes(data.data.memes);
+    })();
+
+    // Named async functiom
+
+    // async function getMemes() {
+    //   const response = await fetch(`https://api.imgflip.com/get_memes`);
+    //   const data = await response.json();
+    //   setAllMemes(data.data.memes);
+    // }
+    // getMemes()
+
+    // Promises
+
+    // fetch(`https://api.imgflip.com/get_memes`)
+    //   .then((res) => res.json())
+    //   .then((data) => setAllMemes(data.data.memes));
   }, []);
 
   function getNewMeme() {
@@ -19,12 +38,6 @@ function Meme() {
     const choice = allMemes[randomNum];
 
     setMeme((prevMeme) => ({ ...prevMeme, randomImage: choice.url }));
-
-    return {
-      topText: '',
-      bottomText: '',
-      randomImage: choice.url,
-    };
   }
 
   function handleMemeText(e) {
@@ -74,11 +87,3 @@ function Meme() {
 }
 
 export default Meme;
-
-// async () => {
-//   const response = await fetch(`https://api.imgflip.com/get_memes`);
-//   const data = await response.json();
-//   const memes = data.data;
-
-//   setAllMemes(memes);
-// };
