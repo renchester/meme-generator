@@ -23,22 +23,33 @@ function Meme() {
     };
   }
 
+  function handleMemeText(e) {
+    const { name, value } = e.target;
+
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  }
+
   return (
     <main className="main">
       <form action="" className="form">
         <input
           type="text"
           className="form-input form-input__top"
-          maxLength={30}
-          value="Shut up"
           placeholder="Text on top"
+          onChange={handleMemeText}
+          name="topText"
+          value={meme.topText}
         />
         <input
           type="text"
           className="form-input form-input__bottom"
-          maxLength={30}
-          value="and take my money"
           placeholder="Text on bottom"
+          onChange={handleMemeText}
+          name="bottomText"
+          value={meme.bottomText}
         />
 
         <button
@@ -51,6 +62,8 @@ function Meme() {
       </form>
       <section className="meme__wrapper">
         <img src={meme.randomImage} alt="Meme" className="meme__img" />
+        <h2 className="meme__text top">{meme.topText}</h2>
+        <h2 className="meme__text bottom">{meme.bottomText}</h2>
       </section>
     </main>
   );

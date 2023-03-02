@@ -108,6 +108,8 @@ table {
   --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
   --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
   --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+  background-color: var(--color-background-dark);
 }
 
 #root {
@@ -115,7 +117,6 @@ table {
   height: 100vh;
   width: 100vw;
 
-  background-color: var(--color-background-dark);
   color: var(--color-text);
   font-family: var(--font-poppins);
 }

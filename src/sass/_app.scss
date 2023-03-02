@@ -1,5 +1,10 @@
 @use 'base';
 
+@font-face {
+  font-family: 'Impact';
+  src: url(../assets/impact.ttf) format('truetype');
+}
+
 .app {
   --border-radius: 12px;
   --margin-sides: 40px;
@@ -83,9 +88,8 @@
 
 .meme {
   &__wrapper {
+    position: relative;
     width: calc(100% - var(--margin-sides) * 2);
-    // max-height: 400px;
-    // height: 288px;
     margin: 0 auto;
   }
 
@@ -93,5 +97,29 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+
+  &__text {
+    --text-offset: 12px;
+
+    position: absolute;
+    width: 97%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-transform: uppercase;
+    text-align: center;
+    font-size: var(--text-xxl);
+    font-family: 'Impact';
+    text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+    color: white;
+  }
+
+  &__text.top {
+    top: var(--text-offset);
+  }
+
+  &__text.bottom {
+    bottom: var(--text-offset);
   }
 }
